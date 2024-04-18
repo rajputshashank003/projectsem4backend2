@@ -52,6 +52,8 @@ const server = app.listen(
 
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
+  transports : ['websocket', 'polling'],
+  reconnection : true,
   cors: {
     origin: "*",
     //credentials: true,
