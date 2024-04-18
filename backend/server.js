@@ -61,7 +61,7 @@ const io = require("socket.io")(server, {
 });
 console.log("going to connect socket.io");
 
-io.on("connection", (socket) => {
+io.on("connection", (socket) => { 
   console.log("Connected to socket.io");
   socket.on("setup", (userData) => {
     socket.join(userData._id);
@@ -92,3 +92,4 @@ io.on("connection", (socket) => {
     socket.leave(userData._id);
   });
 });
+console.log("after the socket function !");
